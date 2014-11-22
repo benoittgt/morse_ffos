@@ -1,0 +1,20 @@
+{
+  "name": "morse",
+  "description": "Morse sound app",
+  "launch_path": "/index.html",
+  "icons": {
+    "16": "/icons/icon16x16.png",
+    "48": "/icons/icon48x48.png",
+    "60": "/icons/icon60x60.png",
+    "128": "/icons/icon128x128.png"
+  },
+  "type": "privileged",
+    "developer": {
+    "name": "Benoit Tigeot",
+    "url": "http://github.com/benoittgt"
+  },
+  "appcache_path": "/manifest.appcache",
+  "installs_allowed_from": ["*"],
+  "csp": "allow 'self'; object-src 'none'",
+  "permissions": {}
+}

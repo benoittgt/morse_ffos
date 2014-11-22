@@ -1,0 +1,12 @@
+CACHE MANIFEST
+
+# Version 0.1
+
+CACHE:
+/stylesheets/all.css
+/javascripts/all.js
+/images/settings.png
+/index.html
+
+NETWORK:
+/javascripts/generated/rates.js
