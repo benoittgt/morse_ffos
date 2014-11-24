@@ -1,0 +1,47 @@
+body {
+    margin:0;
+    font-size:1em;
+    font-family:"Fira Sans","DejaVu Sans"
+}
+
+input {
+    font-size:1em;
+    background:transparent;
+    width:100%;
+    padding:1em;
+    border:0;
+    box-sizing:border-box
+}
+
+input#from {
+    border-bottom:1px #eee solid
+}
+
+input[type=text] {
+    background-color:#f8f8f8
+}
+
+input[type=submit] {
+    background-color:#333;
+    color:#fff
+}
+
+button {
+    background: #333;
+    border: 0px none;
+    padding: 1em;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+    margin-top: 1em;
+}
+
+.morse-result {
+    width: 100%;
+    padding: 1em;
+    border: 0px none;
+    box-sizing: border-box;
+    background: none repeat scroll 0% 0% rgb(236, 236, 236);
+    font-size: 1em;
+    text-align: center;
+}

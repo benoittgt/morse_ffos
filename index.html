@@ -1,56 +1,26 @@
 <!doctype html>
 <html dir="ltr" lang="en" manifest="manifest.appcache">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Morse test app ffos</title>
-    <link rel="stylesheet" href="css/foundation.min.css" />
-    <script src="js/vendor/modernizr.js"></script>
-  </head>
-  <body>
-    <div class="row">
-      <div class="large-12 columns">
-        <h1>Morse App :: test</h1>
-      </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Morse test app ffos</title>
+  <link rel="stylesheet" href="css/stylesheet.css" />
+</head>
+<body class="index">
+  <form id="form" name="form">
+    <input id="morseField" placeholder="Text to be converted" type="text">
+    <input id="txt_morse_button" type="submit" value="Conver to morse!">
+  </form>
+  <div id="morse_render" class="morse-result">
+    Trigger the handler
+  </div>
+  <h5>Press button to produce a sound:</h5>
+    <button class="button" data-muted="true">Dot</button>
+  <div id="result"></div>
+</body>
 
-      <div class="morsefield">
-        <input id="txt_morse" type="text" value="Hello there">
-        <button id="txt_morse_btn" class="morse_submit" type="submit">Convert</button>
-        <div id="morse_render">
-          Trigger the handler
-        </div>
-      </div>
-      <div id="myBtn" class="small-11 small-centered columns">
-        <h5>Press button to produce a sound:</h5>
-        <button class="mute button expand" data-muted="true">Dot</button>
-        <button class="jstest button expand">jstest</button>
-      </div>
-    </div>
-    <script src="js/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script src="js/synth.js"></script>
-    <script src="js/jquery.morse.js"></script>
-    <script type="text/javascript">
-    // var jstest = document.querySelector('.jstest');
-    //   jstest.onclick = function() {
-    //     var morseConverter = new MorseCode();
-    //     var morseResult = morseConverter.translate("Semia");
-    //     console.log(morseResult);
-    //     $('.morse_render').html(morseResult);
-    //     };
-    //     $('.usermorse').keydown(function(){
-    //     console.log($('.usermorse').val().split(''));
-    //   });
-    // $('.morsesubmit').click(function() {
-    //   // get all the inputs into an array.
-    //   console.log("test");
-    // });
-    document.getElementById('txt_morse_btn').onclick = function() {
-      var morse_field_ctnt = document.getElementById('txt_morse').value;
-      var morseConverter = new MorseCode();
-      var morseResult = morseConverter.translate(morse_field_ctnt);
-      document.getElementById('morse_render').innerHTML = morse_field_ctnt;
-    };
-    </script>
-  </body>
+<script src="js/synth.js"></script>
+<script src="js/morsecode.js"></script>
+<script src="js/action.js"></script>
+</body>
 </html>
