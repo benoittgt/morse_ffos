@@ -5,23 +5,23 @@ var oscillator = audioCtx.createOscillator();
 var gainNode = audioCtx.createGain();
 // connect oscillator to gain node to speakers
 oscillator.connect(gainNode);
-// create initial theremin frequency and volumn values
-var initialFreq = 800;
-var initialVol = 0.006;
+// oscillator parameters
+var initialFreq = 440;
+var initialVol = 0.1;
+var dotTime = 200
 // set options for the oscillator
 oscillator.type = 'sine';
 oscillator.frequency.value = initialFreq; // value in hertz
-oscillator.detune.value = 100; // value in cents
 oscillator.start();
-oscillator.onended = function() {
-	console.log('Your tone has now stopped playing!');
-}
+
 gainNode.gain.value = initialVol;
+
 
 // mute button
 var mute = document.querySelector('.mute');
 mute.onclick = function() {
-		gainNode.connect(audioCtx.destination);
-		setTimeout("gainNode.disconnect(audioCtx.destination)", 200);
-}
+    // start and stop delayed on the oscillator doesn't work so I unmute-mute the signal.
+    gainNode.connect(audioCtx.destination);
+    window.setTimeout("gainNode.disconnect(audioCtx.destination)", dotTime);
+};
 
