@@ -14,13 +14,15 @@ gainNode.connect(audioCtx.destination);
 oscillator.start();
 
 function trigger() {
-  syntEmmit(0.1);
+  synthEmit(0.1);
 }
 
-function syntEmmit (duration) {
-  gainNode.gain.setValueAtTime(0.8, audioCtx.currentTime);
-  gainNode.gain.setTargetAtTime(0.0, audioCtx.currentTime + duration, 0.001);
-
+function synthEmit (duration){
+  if (duration == 7) {
+    console.log("silence from synth");
+  } else {
+    gainNode.gain.setValueAtTime(0.8, audioCtx.currentTime);
+    gainNode.gain.setTargetAtTime(0.0, audioCtx.currentTime + duration, 0.001);
+  }
 }
-
 

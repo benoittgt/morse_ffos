@@ -1,28 +1,31 @@
 (function() {
 
   var PlayMorseCode = function() {
-    this.timeUnit = 1000;
+    this.timeUnit = 1;
     this.play = function (morse){
-      morse.split("").map(this.convertToTime);
-      console.log(morse.split("").map(this.convertToTime));
-      return true;
+      var morseSplit = morse.split("").map(this.convertToTime);
+      return morseSplit;
     };
     this.convertToTime = function (morse) {
-      var timeUnit = 1000;
+      var timeUnit = 1;
       if (morse == ".") {
+        console.log("dot");
         return timeUnit;
-      } else {
+      } else if (morse == "_") {
+        console.log("dash");
         return 3 * timeUnit;
+      } else {
+        console.log("silence")
+        return 7;
       }
     };
     this.playUnit = function (units, synth){
       if(units.length > 0){
-        synth(units[0]);
         var rest = units.splice(1,units.length);
         this.playUnit(rest, synth);
-      } else {
-        return
       }
+      setInterval(synthEmit(units[0]), 3000);
+
     };
   };
 

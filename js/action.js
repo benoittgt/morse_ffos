@@ -10,9 +10,9 @@ document.querySelector('#prod_morse').addEventListener("click", function (e) {
   var player = new PlayMorseCode();
   var produce_morse = document.getElementById('morse_render').innerHTML;
 
-  player.play(produce_morse);
-
+  var playerPlay = player.play(produce_morse);
+  player.playUnit(playerPlay);
 });
 
-document.querySelector('.mute').addEventListener("click", trigger)
+document.querySelector('.mute').addEventListener("click", trigger);
 document.querySelector('.mute').addEventListener("touchstart",trigger);
