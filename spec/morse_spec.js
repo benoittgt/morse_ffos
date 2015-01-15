@@ -12,4 +12,16 @@ describe("test morse app", function () {
 		expect(player.convertToTime(".")).toEqual(1000);
 	})
 
+	it("play unit", function(){
+		memory = 0
+		player.playUnit([1000],function(value){memory = value})
+		expect(memory).toEqual(1000);
+	})
+
+	it("play units", function(){
+		memory = new Array();
+		player.playUnit([1000,3000],function(value){memory.push(value)})
+		expect(memory).toEqual([1000,3000]);
+	})
+
 });

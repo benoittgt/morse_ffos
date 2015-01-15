@@ -8,17 +8,19 @@ gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
 gainNode.gain.value = initialVol;
 oscillator.connect(gainNode);
 oscillator.type = 'sine';
-oscillator.frequency.value = initialFreq; // value in hertz
+oscillator.frequency.value = initialFreq;
 
 gainNode.connect(audioCtx.destination);
 oscillator.start();
 
 function trigger() {
-  gainNode.gain.setValueAtTime(0.8, audioCtx.currentTime);
-  gainNode.gain.setTargetAtTime(0.0, audioCtx.currentTime + 0.0, 0.1);
+	syntEmmit(0.1);
 }
 
-var mute = document.querySelector('.mute');
-mute.ontouchstart = trigger;
-mute.onclick= trigger;
+function syntEmmit (duration) {
+  gainNode.gain.setValueAtTime(0.8, audioCtx.currentTime);
+  gainNode.gain.setTargetAtTime(0.0, audioCtx.currentTime + duration, 0.001);
+
+}
+
 
