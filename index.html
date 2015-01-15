@@ -7,18 +7,19 @@
   <link rel="stylesheet" href="css/stylesheet.css" />
 </head>
 <body class="index">
-  <form id="form" name="form">
     <input id="morseField" placeholder="Text to be converted" type="text">
-    <input id="txt_morse_button" type="submit" value="Conver to morse!">
-  </form>
+    <button id="txt_morse">Convert to morse!</button>
   <div id="morse_render" class="morse-result">
     Trigger the handler
   </div>
+    <button id="prod_morse">Produce morse!</button>
+  <br>
   <h5>Press button to produce a sound:</h5>
     <button class="button mute" data-muted="true">Dot</button>
   <div id="result"></div>
 </body>
 
+<script src="js/play_morsecode.js"></script>
 <script src="js/synth.js"></script>
 <script src="js/morsecode.js"></script>
 <script src="js/action.js"></script>

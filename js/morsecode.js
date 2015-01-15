@@ -63,7 +63,7 @@
         };
 
         this.translateToAlphanumeric = function(to_translate) {
-            return "NOT IMPLEMENTED ERROR ZOMG";
+            return "Insert text please";
         };
     };
 
@@ -83,3 +83,5 @@
     }
 
 }());
+
+
