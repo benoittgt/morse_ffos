@@ -14,7 +14,7 @@ gainNode.connect(audioCtx.destination);
 oscillator.start();
 
 function trigger() {
-	syntEmmit(0.1);
+  syntEmmit(0.1);
 }
 
 function syntEmmit (duration) {
